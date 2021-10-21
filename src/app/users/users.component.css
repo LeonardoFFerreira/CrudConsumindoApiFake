@@ -1,0 +1,26 @@
+table {
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid black;
+}
+
+h1 {
+    font-style: oblique;
+    text-align: center;
+}
+
+table thead {
+    background-color: gray;
+    color: #ffffff;
+    font-style: oblique;
+    border: 1px solid black;
+}
+
+i {
+    color: rgb(63, 63, 63);
+}
+
+i:hover {
+    color: rgb(112, 112, 116);
+}

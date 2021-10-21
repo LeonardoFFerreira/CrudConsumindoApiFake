@@ -1,0 +1,33 @@
+table {
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid black;
+}
+
+table thead {
+    background-color: gray;
+    color: #ffffff;
+    font-style: oblique;
+}
+
+table thead {
+    border: 1px solid black;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+button:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+}
+
+i {
+    color: rgb(63, 63, 63);
+}
+
+i:hover {
+    color: rgb(112, 112, 116);
+}

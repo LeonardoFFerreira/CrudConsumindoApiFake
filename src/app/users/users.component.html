@@ -1,0 +1,32 @@
+<h1>Lista de usuários</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<!--link de referência de estilo para icones-->
+<table *ngIf="responseUsers">
+    <!--Diretiva ngIf que verifica se o obj de response(retorno) responseUsers é true ou false -->
+    <!--se for true ele carrega a tabela abaixo, se for false ele não carrega a tabela -->
+    <thead>
+        <td>Nome</td>
+        <td>Sobrenome</td>
+        <td>Editar</td>
+        <td>Deletar</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of responseUsers.data">
+            <!-- *ngFor é uma diretiva que possibilita fazer um FOR em um componente html-->
+            <!-- let declada uma variável ou obj local, nesse caso é user -->
+            <!-- em seguida ele indica que será iterado a cada vez que houver o retorono do responseUsers.data-->
+            <!-- o data do ResponseUsers retorna um ARRAY de users-->
+            <!-- e a cada obj que retorna do ARRAY é atribuido em um obj user-->
+            <td>{{user.first_name}}</td>
+            <!--usando a interpolação para acessar todos os atributos dos objs user resultantes da iteração-->
+            <!--é necessário colocar um . para poder acessar cada um dos atributos desse obj-->
+            <td>{{user.last_name}}</td>
+            <td><a routerLink="/users/update/{{user.id}}"><i class="fas fa-edit"></i></a></td>
+            <!--link com ícone de editar que carrega o update-user.component.ts-->
+            <!--Esse link usa no fim uma interpolação para passar o id do usuário pela url -->
+            <td><a routerLink="/users/delete/{{user.id}}"><i class="fas fa-user-minus"></i></a></td>
+            <!--link com ícone de editar que carrega o delete-user.component.ts-->
+            <!--Esse link usa no fim uma interpolação para passar o id do usuário pela url -->
+        </tr>
+    </tbody>
+</table>

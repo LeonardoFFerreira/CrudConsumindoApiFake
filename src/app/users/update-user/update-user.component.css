@@ -1,0 +1,17 @@
+table {
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    border-radius: 5px;
+    color: #fff;
+    background-color: rgb(54, 54, 54);
+}
+
+h1 {
+    font-style: oblique;
+    text-align: center
+}

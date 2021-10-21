@@ -1,0 +1,37 @@
+table {
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.resultado {
+    border: 1px solid black;
+}
+
+.resultado thead {
+    background-color: gray;
+    color: #ffffff;
+    font-style: oblique;
+    border: 1px solid black;
+}
+
+.resultado td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h1 {
+    font-style: oblique;
+    text-align: center
+}
+
+button {
+    width: 100%;
+    border-radius: 5px;
+    color: #fff;
+    background-color: rgb(54, 54, 54);
+}
+
+button:hover {
+    background-color: rgb(65, 64, 64);
+}

@@ -1,0 +1,28 @@
+<h1>Atualizar usuário</h1>
+
+<div *ngIf="request">
+    <!--Diretiva ngIf que verifica se o obj de request(requisição) request é true ou false -->
+    <!--se for true ele carrega os campos abaixo, se for false ele não carrega os campos -->
+    <!--Esse request é resultado da execução do método ngOnInit do update-user.component.ts-->
+    <!-- Ao clicar no routerLink editar de um usuário da lista localizado no users.component.html -->
+    <!--Será executado o método ngOnInit do update-user.component.ts -->
+    <!---Esse método irá executar o getUser do userService.ts e retornará com os dados do usuário  -->
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td> <input type="text" placeholder="Insira o nome..." [(ngModel)]="request.name"></td>
+            <!-- Foi usado o two-way data-binding [(ngModel)] pois ele é uma diretiva com binding bi-direcional-->
+            <!-- Isso possibilita receber nos inputs do html os dados que o getUser buscou ao clicar em editar na tela da lista de usuários-->
+            <!-- Além de enviar para o obj request no update-user.component.ts os dados editados pelo usuário de forma automática -->
+        </tr>
+        <tr>
+            <td>Cargo</td>
+            <td> <input type="text" placeholder="Insira o cargo..." [(ngModel)]="request.job"></td>
+            <!-- Foi usado o two-way data-binding [(ngModel)] pois ele é uma diretiva com binding bi-direcional-->
+            <!-- Isso possibilita receber nos inputs do html os dados que o getUser buscou ao clicar em editar na tela da lista de usuários-->
+            <!-- Além de enviar para o obj request no update-user.component.ts os dados editados pelo usuário de forma automática -->
+        </tr>
+        <td></td>
+        <td><button (click)="update()">Atualizar</button></td>
+    </table>
+</div>

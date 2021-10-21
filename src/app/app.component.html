@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <!--menu superior - NAVBAR com estilo do bootstrap-->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <!--lista com estilo do bootstrap-->
+            <li class="nav-item active"> <a class="nav-link" [routerLink]="[ '/']">INÍCIO</a></li>
+            <!-- usando o property binding para atribuir ao routerLink o caminho "raíz"-->
+            <li class="nav-item "> <a class="nav-link" [routerLink]="[ '/users']">Lista de usuários</a></li>
+            <!-- usando o property binding para atribuir ao routerLink a rota para /users-->
+            <!-- essa rota exibe o users.component.html que exibe a lista de usuários-->
+            <li class="nav-item "> <a class="nav-link" [routerLink]="[ '/users/create']">Cadastro de usuários</a>
+                <!-- usando o property binding para atribuir ao routerLink a rota para /users/create-->
+                <!-- essa rota exibe o create-user.component.html exibe os campos para cadatro de um novo usuário-->
+            </li>
+        </ul>
+    </div>
+</nav>
+<div>
+    <router-outlet></router-outlet>
+    <!--tag responsável por mostrar os componentes declarados no router-->
+</div>

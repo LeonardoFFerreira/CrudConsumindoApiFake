@@ -1,0 +1,46 @@
+<h1>Cadastrar usuário</h1>
+
+<div>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td> <input type="text" placeholder="Insira o nome..." [(ngModel)]="requestUser.name"></td>
+            <!-- Foi usado o two-way data-binding [(ngModel)] pois ele é uma diretiva com binding bi-direcional-->
+            <!-- Isso possibilita receber nos inputs do html os dados que o getUser buscou ao clicar em editar na tela da lista de usuários-->
+            <!-- Além de enviar para o obj request no update-user.component.ts os dados editados pelo usuário de forma automática -->
+        </tr>
+        <tr>
+            <td>Cargo</td>
+            <td> <input type="text" placeholder="Insira o cargo..." [(ngModel)]="requestUser.job"></td>
+            <!-- Foi usado o two-way data-binding [(ngModel)] pois ele é uma diretiva com binding bi-direcional-->
+            <!-- Isso possibilita receber nos inputs do html os dados que o getUser buscou ao clicar em editar na tela da lista de usuários-->
+            <!-- Além de enviar para o obj request no update-user.component.ts os dados editados pelo usuário de forma automática -->
+        </tr>
+        <tr>
+            <td></td>
+            <td><button (click)="cadastrar()">Salvar</button></td>
+            <!--usando o binding de evento para "escutar" o click do botão e atribuir a ele o método cadastrar()-->
+        </tr>
+    </table>
+</div>
+
+<div>
+    <table class="resultado" *ngIf="responseUser">
+        <!--Diretiva ngIf que verifica se o obj de response(retorno) responseUser é true ou false -->
+        <!--se for true ele carrega a tabela abaixo, se for false ele não carrega a tabela -->
+        <!--qdo o ngIf é true indica que o cadastrar() teve sucesso e com isso terá um obj responseUser na resposta-->
+        <!-- os atributos desse obj serão acessados um a um através da interpolação e exibidos na tabela abaixo -->
+        <thead>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Cargo</td>
+            <td>Data do cadastro</td>
+        </thead>
+        <tbody>
+            <td>{{responseUser.id}}</td>
+            <td>{{responseUser.name}}</td>
+            <td>{{responseUser.job}}</td>
+            <td>{{responseUser.createdAt}}</td>
+        </tbody>
+    </table>
+</div>

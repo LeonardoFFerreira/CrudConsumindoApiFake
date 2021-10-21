@@ -1,0 +1,30 @@
+<h1 style="text-align: center;">Deletar usuários</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<!--link de referência de estilo para icones-->
+
+<div *ngIf="user">
+    <!--Diretiva ngIf que verifica se o obj de response(retorno) user é true ou false -->
+    <!--Esse response é resulatdo do GET que é feito para indicar o obj user que será deletado-->
+    <!--se for true ele carrega a tabela abaixo, se for false ele não carrega a tabela -->
+    <table>
+        <thead>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Sobrenome</td>
+            <td>Deletar</td>
+            <td>Cancelar</td>
+        </thead>
+        <tbody>
+            <!--o ngIf sendo true signfica que houve sucesso no ngOnInit(getUser) do delete-user.component.ts-->
+            <!--Com isso haverá o retorno de um obj user-->
+            <!-- os atributos desse obj serão acessados um a um e exibidos na tabela abaixo -->
+            <td>{{ user.id }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td> <button (click)="delete()"><i class="fas fa-window-close"></i></button></td>
+            <!--usando o binding de evento para "escutar" o click do botão e atribuir a ele o método deletar()-->
+            <td> <button type="menu" (click)="cancel()"><i class="fas fa-reply-all"></i></button></td>
+            <!--usando o binding de evento para "escutar" o click do botão e atribuir a ele o método cancelar()-->
+        </tbody>
+    </table>
+</div>
